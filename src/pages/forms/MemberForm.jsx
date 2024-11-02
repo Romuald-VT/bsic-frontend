@@ -63,7 +63,7 @@ const MembershipForm = () => {
     dataToSend.append('NIC_Verso',nicVerso)
      try
      {
-       const response = await axios.post('http://localhost:4000/api/customers/add',dataToSend,{headers:{'Content-Type':'multipart/form-data'}})
+       const response = await axios.post('https://bsic-api.up.railway.app//api/customers/add',dataToSend,{headers:{'Content-Type':'multipart/form-data'}})
        if(response.status === 201)
        {
         toast.success('operation reussie !', response.config)

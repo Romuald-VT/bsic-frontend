@@ -26,7 +26,7 @@ const Table = ()=>{
          const getData = async()=>{
             try{
                 const token = localStorage.getItem('token')
-                const response = await axios.get('http://localhost:4000/api/customers/all',{headers:{'Authorization':token}})
+                const response = await axios.get('https://bsic-api.up.railway.app/api/customers/all',{headers:{'Authorization':token}})
                 setDataApi(response.data.customers)
                 
             }
@@ -69,7 +69,7 @@ const Table = ()=>{
     const handleDeletion = async(email)=>
     {
         try{
-            const response = await axios.delete(`http://localhost:4004/api/customers/${email}`)
+            const response = await axios.delete(`https://bsic-api.up.railway.app//api/customers/${email}`)
 
             console.log(email)
             if(response.status ===200)
