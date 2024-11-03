@@ -34,10 +34,10 @@ function App() {
             <Route path="/current-account" element={<CurrentAccount/>} />
             <Route path="/about" element={<About/>} />
             <Route path="/contact" element={<Contact/>} />
-            <Route path="/login" element={user?<Navigate to='/dashboard'/>:<LoginForm/>} />
+            <Route path="/bs-admin" element={user?<Navigate to='/dashboard'/>:<LoginForm/>} />
             <Route path="/signup" element={<MemberForm/>} />
             <Route path="/member-form" element={<MemberForm/>} />
-            <Route path='/dashboard' element={user?<Table/>:<Navigate to='/login'/>}/>
+            <Route path='/dashboard' element={user?<Table/>:<Navigate to='/bs-admin'/>}/>
           </Routes>
       </div>
     </Router>
