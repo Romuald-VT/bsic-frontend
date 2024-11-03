@@ -16,6 +16,7 @@ import LoginForm from "./pages/forms/Login";
 import MemberForm from "./pages/forms/MemberForm"
 import Table from "./pages/admin-page/dashboard";
 import { useSelector } from "react-redux";
+import NotFound from "./pages/404-notFound-page/notFoundPage";
 function App() {
   
  const {user} = useSelector((state)=>state.auth)
@@ -38,6 +39,7 @@ function App() {
             <Route path="/signup" element={<MemberForm/>} />
             <Route path="/member-form" element={<MemberForm/>} />
             <Route path='/dashboard' element={user?<Table/>:<Navigate to='/bs-admin'/>}/>
+            <Route path='*' element={<NotFound/>}/>
           </Routes>
       </div>
     </Router>
