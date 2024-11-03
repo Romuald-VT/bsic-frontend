@@ -62,7 +62,7 @@ import 'react-toastify/ReactToastify.css'
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
               <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">
-              Adresse e-mail
+              nom d &apos;utilisateur
               </label>
               <input
                 type="text"
@@ -88,21 +88,7 @@ import 'react-toastify/ReactToastify.css'
                 required
               />
             </div>
-            <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center">
-                <input
-                  type="checkbox"
-                  id="remember"
-                  name="remember"
-                  className="h-4 w-4 text-blue-500 focus:ring-blue-600 border-gray-300 rounded"
-                  checked={false}
-                  onChange={() => {}}
-                />
-                <label htmlFor="remember" className="ml-2 block text-sm text-gray-900">
-                Se souvenir de moi
-                </label>
-              </div>
-            </div>
+            
             <div className="flex items-center justify-between">
               <button
                 type="submit"
