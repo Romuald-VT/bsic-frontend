@@ -9,7 +9,7 @@ const DeleteDialogBox =({email,showModal})=>{
         {
             const production_url = `https://bsic-api.up.railway.app/api/customers/${email}`
             try{
-                const response = await axios.delete(`http://localhost:4000/api/customers/${email}`,{headers:{Authorization:localStorage.getItem('token')}})
+                const response = await axios.delete(production_url,{headers:{Authorization:localStorage.getItem('token')}})
     
                 console.log(email)
                 if(response.status !==200)
