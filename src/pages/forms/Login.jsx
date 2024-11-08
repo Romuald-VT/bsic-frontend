@@ -28,9 +28,11 @@ import 'react-toastify/ReactToastify.css'
     const dataToSend = new FormData()
     dataToSend.append('username',username)
     dataToSend.append('password',password)
+
+    const pro_url = "https://bsic-api.up.railway.app/api/users/login"
     try
     {
-      const response = await axios.post('https://bsic-api.up.railway.app/api/users/login',dataToSend,{headers:{'Content-Type':'application/json'}})
+      const response = await axios.post('http://localhost:4000/api/users/login',dataToSend,{headers:{'Content-Type':'application/json'}})
       if( response.status ===200)
       {
          const {user,token} = response.data

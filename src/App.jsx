@@ -29,7 +29,7 @@ function App() {
             <Route path="/" element={<Home/>} />
             <Route path="/loans" element={<Loan/>} />
             <Route path="/deposits" element={<Deposits/>} />
-            <Route path="/money-transfer" element={<MoneyTransfer/>} />
+            <Route path="/money-transfer" element={<MoneyTransfer/>}/>
             <Route path="/credit-card" element={<CreditCard/>} />
             <Route path="/savings-account" element={<SavingAccount/>} />
             <Route path="/current-account" element={<CurrentAccount/>} />

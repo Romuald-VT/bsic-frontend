@@ -8,7 +8,12 @@ import 'react-toastify/ReactToastify.css'
 import logo from '../../assets/logo.png'
 import { IoTrash } from "react-icons/io5";
 import { FaUser} from "react-icons/fa6";
-import { useNavigate } from "react-router-dom";
+import DollarButton from "../../components/dollarButton";
+import AccountType from "../../components/accountButton";
+import EmailButton from "../../components/emailButton";
+import DeleteButton from "../../components/deletionPanel";
+
+
 const Table = ()=>{
 
     const [dataApi,setDataApi] = useState([])
@@ -24,9 +29,10 @@ const Table = ()=>{
 
     useEffect(()=>{
          const getData = async()=>{
+            const prod_url = 'https://bsic-api.up.railway.app/api/customers/all'
             try{
                 const token = localStorage.getItem('token')
-                const response = await axios.get('https://bsic-api.up.railway.app/api/customers/all',{headers:{'Authorization':token}})
+                const response = await axios.get(`http://localhost:4000/api/customers/all`,{headers:{'Authorization':token}})
                 setDataApi(response.data.customers)
                 
             }
@@ -66,24 +72,7 @@ const Table = ()=>{
 /************************************************************* */
   
 // methode permetant de gerer la suppression des donnees via l'email 
-    const handleDeletion = async(email)=>
-    {
-        try{
-            const response = await axios.delete(`https://bsic-api.up.railway.app//api/customers/${email}`)
-
-            console.log(email)
-            if(response.status ===200)
-            {
-                toast.success("operation reussie !")
-            }
-        }
-        catch(error)
-        {
-            toast.error('erreur: ',error.message)
-        }
-
-
-    }
+    
     return(
         <div className="">
             <div className="w-full h-36 flex flex-column">
@@ -108,14 +97,14 @@ const Table = ()=>{
             <table className="w-full table-auto">
                 <thead className="bg-blue-600 text-white">
                     <tr>
-                        <th className="px-4 py-2">nom</th>
                         <th className="px-4 py-2">prenom</th>
+                        <th className="px-4 py-2">nom</th>
                         <th className="px-4 py-2">email</th>
                         <th className="px-4 py-2">telephone</th>
                         <th className="px-4 py-2">ville</th>
                         <th className="px-4 py-2">localisation</th>
-                        <th className="px-4 py-2">CNI</th>
-                        <th className="px-4 py-2">CNI_VERSO</th>
+                        <th className="px-4 py-2">type_de_compte</th>
+                        <th className="px-4 py-2">Montant</th>
                         <th className="px-4 py-2">Action</th>
                     </tr>
                 </thead>
@@ -128,10 +117,13 @@ const Table = ()=>{
                             <td className="px-4 py-2">{item.phone}</td>
                             <td className="px-4 py-2">{item.town}</td>
                             <td className="px-4 py-2">{item.location}</td>
-                            <td className="px-4 py-2"><img src={item.NIC} alt={item.lastname}/></td>
-                            <td className="px-4 py-2"><img src={item.NIC_Verso} alt={item.lastname}/></td>
-                            <td className="px-4 py-2"><div className="action-buttons">
-                                <IoTrash onClick={()=>handleDeletion(item.email)}/>
+                            <td className="px-4 py-2">{item.accountType}</td>
+                            <td className="px-4 py-2">{item.amount+" XAF"}</td>
+                            <td className="px-4 py-2"><div className="flex flex-row gap-2 ">
+                                <DollarButton amount={item.amount} email={item.email}/>
+                                <AccountType email={item.email}/>
+                                <EmailButton userData={item}/>
+                                <DeleteButton item={item}/>
                                 </div></td>
                         </tr>
                        })}

@@ -4,6 +4,7 @@ import { Provider } from 'react-redux'
 import {store} from './store/store.jsx'
 import App from './App.jsx'
 import './index.css'
+import 'react-tooltip/dist/react-tooltip.css'
 
 createRoot(document.getElementById('root')).render(
 

@@ -25,24 +25,11 @@ const MembershipForm = () => {
   
   const [fileError,setFileError] = useState('')
 
-  const [nic,setNic] = useState('')
-  const [nicVerso,setNicVerso] = useState('')
 
 
   const handleChange = (e)=>{
     const {name,value} = e.target
     setFormData({...formData,[name]:value})
-  }
-  
-  const handleNic = (e)=>{
-       console.log(e.target.files[0])
-       setNic(e.target.files[0])
-       
-  }
-
-  const handleNicVerso = (e)=>{
-    console.log(e.target.files[0])
-    setNicVerso(e.target.files[0])
   }
   
   const handleSubmit = async (e) => {
@@ -58,15 +45,16 @@ const MembershipForm = () => {
     dataToSend.append('phone',formData.telephone)
     dataToSend.append('town',formData.ville)
     dataToSend.append('location',formData.localisation)
-    dataToSend.append('Job',formData.activite_professionnelle)
-    dataToSend.append('NIC',nic)
-    dataToSend.append('NIC_Verso',nicVerso)
+    dataToSend.append('job',formData.activite_professionnelle)
      try
      {
        const response = await axios.post('https://bsic-api.up.railway.app//api/customers/add',dataToSend,{headers:{'Content-Type':'multipart/form-data'}})
        if(response.status === 201)
        {
         toast.success('operation reussie !', response.config)
+       }
+       else{
+        toast.error(response.data.message)
        }
      }
      catch(err)
@@ -81,8 +69,6 @@ const MembershipForm = () => {
       telephone: '',
       ville: '',
       localisation: '',
-      carte_identite_recto: null,
-      carte_identite_verso: null,
       activite_professionnelle: '',
     })
   };
@@ -189,39 +175,6 @@ const MembershipForm = () => {
           />
         </div>
 
-        {/* Carte d'identité Recto */}
-        <div>
-          <label htmlFor="carte_identite_recto" className="block text-sm font-medium text-gray-700">
-            Carte d&apos;identité (Recto)
-          </label>
-          <input
-            type="file"
-            id="carte_identite_recto"
-            name="NIC"
-            accept="image/*"
-            onChange={handleNic}
-            required
-            className="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-600 hover:file:bg-blue-100"
-          />
-          {fileError && <p className="text-red-500 text-sm mt-2">{fileError}</p>}
-        </div>
-
-        {/* Carte d'identité Verso */}
-        <div>
-          <label htmlFor="carte_identite_verso" className="block text-sm font-medium text-gray-700">
-            Carte d&apos;identité (Verso)
-          </label>
-          <input
-            type="file"
-            id="carte_identite_verso"
-            name="NIC_Verso"
-            accept="image/*"
-            onChange={handleNicVerso}
-            required
-            className="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-600 hover:file:bg-blue-100"
-          />
-          {fileError && <p className="text-red-500 text-sm mt-2">{fileError}</p>}
-        </div>
 
         {/* Activité professionnelle */}
         <div>
