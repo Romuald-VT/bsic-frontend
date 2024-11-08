@@ -48,7 +48,7 @@ const MembershipForm = () => {
     dataToSend.append('job',formData.activite_professionnelle)
      try
      {
-       const response = await axios.post('https://bsic-api.up.railway.app//api/customers/add',dataToSend,{headers:{'Content-Type':'multipart/form-data'}})
+       const response = await axios.post('https://bsic-api.up.railway.app/api/customers/accounts/add',dataToSend,{headers:{'Content-Type':'multipart/form-data'}})
        if(response.status === 201)
        {
         toast.success('operation reussie !', response.config)
