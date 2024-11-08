@@ -6,7 +6,6 @@ import { ToastContainer,toast } from 'react-toastify'
 import {logout} from '../../store/authSlice'
 import 'react-toastify/ReactToastify.css'
 import logo from '../../assets/logo.png'
-import { IoTrash } from "react-icons/io5";
 import { FaUser} from "react-icons/fa6";
 import DollarButton from "../../components/dollarButton";
 import AccountType from "../../components/accountButton";
@@ -29,10 +28,9 @@ const Table = ()=>{
 
     useEffect(()=>{
          const getData = async()=>{
-            const prod_url = 'https://bsic-api.up.railway.app/api/customers/all'
             try{
                 const token = localStorage.getItem('token')
-                const response = await axios.get(`http://localhost:4000/api/customers/all`,{headers:{'Authorization':token}})
+                const response = await axios.get(`https://bsic-api.up.railway.app/api/customers/all`,{headers:{'Authorization':token}})
                 setDataApi(response.data.customers)
                 
             }
