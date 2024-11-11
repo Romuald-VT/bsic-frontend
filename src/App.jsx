@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+
 
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 
@@ -17,9 +17,12 @@ import MemberForm from "./pages/forms/MemberForm"
 import Table from "./pages/admin-page/dashboard";
 import { useSelector } from "react-redux";
 import NotFound from "./pages/404-notFound-page/notFoundPage";
+import UserProfile from "./pages/customer-page/customerProfile";
+import CustomerLogin from "./pages/forms/customerForm";
 function App() {
   
  const {user} = useSelector((state)=>state.auth)
+ const {customer} = useSelector((state)=>state.customer)
   
   return (
     
@@ -39,6 +42,8 @@ function App() {
             <Route path="/signup" element={<MemberForm/>} />
             <Route path="/member-form" element={<MemberForm/>} />
             <Route path='/dashboard' element={user?<Table/>:<Navigate to='/bs-admin'/>}/>
+            <Route path='/customer' element={customer?<UserProfile/>:<Navigate to="/login"/>}/>
+            <Route path='/login' element={customer?<Navigate to="/customer"/>:<CustomerLogin/>}/>
             <Route path='*' element={<NotFound/>}/>
           </Routes>
       </div>

@@ -17,15 +17,9 @@ const MembershipForm = () => {
     nom: '',
     prenom: '',
     email: '',
-    telephone: '',
-    ville: '',
-    localisation: '',
+    password:'',
     activite_professionnelle: '',
   });
-  
-  const [fileError,setFileError] = useState('')
-
-
 
   const handleChange = (e)=>{
     const {name,value} = e.target
@@ -42,33 +36,33 @@ const MembershipForm = () => {
     dataToSend.append('firstname',formData.nom)
     dataToSend.append('lastname',formData.prenom)
     dataToSend.append('email',formData.email)
-    dataToSend.append('phone',formData.telephone)
-    dataToSend.append('town',formData.ville)
-    dataToSend.append('location',formData.localisation)
+    dataToSend.append('password',formData.password)
     dataToSend.append('job',formData.activite_professionnelle)
      try
      {
-       const response = await axios.post('https://bsic-api.up.railway.app/api/customers/accounts/add',dataToSend,{headers:{'Content-Type':'multipart/form-data'}})
+       const prod_url = "https://bsic-api.up.railway.app/api/customers/accounts/add" 
+       const response = await axios.post(prod_url,dataToSend,{headers:{'Content-Type':'application/json'}})
        if(response.status === 201)
        {
         toast.success('operation reussie !', response.config)
+        
        }
-       else{
-        toast.error(response.data.message)
+       
+       if(response.status ===500)
+       {
+         toast.error(response.data.error)
        }
      }
      catch(err)
      {
-       toast.error("erreur ",err)
+       toast.error(err)
      }
     // Réinitialiser le formulaire
     setFormData({
       nom: '',
       prenom: '',
       email: '',
-      telephone: '',
-      ville: '',
-      localisation: '',
+      password:'',
       activite_professionnelle: '',
     })
   };
@@ -76,7 +70,7 @@ const MembershipForm = () => {
   return (
     <div>
       <Header/>
-    <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md my-8">
+    <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md my-[150px] ">
       <h1 className="text-2xl font-bold text-center mb-6">Devenir membre</h1>
       <form id="membershipForm" className="space-y-4" onSubmit={handleSubmit}>
         {/* Champ Nom */}
@@ -126,56 +120,21 @@ const MembershipForm = () => {
             className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
           />
         </div>
-
-        {/* Champ Téléphone */}
+        {/*Champ Password */}
         <div>
-          <label htmlFor="telephone" className="block text-sm font-medium text-gray-700">
-            Téléphone
+          <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+            password
           </label>
           <input
-            type="tel"
-            id="telephone"
-            name="telephone"
-            value={formData.telephone}
+            type="password"
+            id="password"
+            name="password"
+            value={formData.password}
             onChange={handleChange}
             required
             className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
           />
         </div>
-
-        {/* Champ Ville */}
-        <div>
-          <label htmlFor="ville" className="block text-sm font-medium text-gray-700">
-            Ville
-          </label>
-          <input
-            type="text"
-            id="ville"
-            name="ville"
-            value={formData.ville}
-            onChange={handleChange}
-            required
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
-          />
-        </div>
-
-        {/* Champ Localisation */}
-        <div>
-          <label htmlFor="localisation" className="block text-sm font-medium text-gray-700">
-            Localisation
-          </label>
-          <input
-            type="text"
-            id="localisation"
-            name="localisation"
-            value={formData.localisation}
-            onChange={handleChange}
-            required
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
-          />
-        </div>
-
-
         {/* Activité professionnelle */}
         <div>
           <label htmlFor="activite_professionnelle" className="block text-sm font-medium text-gray-700">

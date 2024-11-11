@@ -28,9 +28,10 @@ const Table = ()=>{
 
     useEffect(()=>{
          const getData = async()=>{
+            const prodd_url = `https://bsic-api.up.railway.app/api/customers/all`
             try{
                 const token = localStorage.getItem('token')
-                const response = await axios.get(`https://bsic-api.up.railway.app/api/customers/all`,{headers:{'Authorization':token}})
+                const response = await axios.get(prodd_url,{headers:{'Authorization':token}})
                 setDataApi(response.data.customers)
                 
             }
@@ -98,9 +99,7 @@ const Table = ()=>{
                         <th className="px-4 py-2">prenom</th>
                         <th className="px-4 py-2">nom</th>
                         <th className="px-4 py-2">email</th>
-                        <th className="px-4 py-2">telephone</th>
-                        <th className="px-4 py-2">ville</th>
-                        <th className="px-4 py-2">localisation</th>
+                        <th className="px-4 py-2">activite_professionnelle</th>
                         <th className="px-4 py-2">type_de_compte</th>
                         <th className="px-4 py-2">Montant</th>
                         <th className="px-4 py-2">Action</th>
@@ -112,9 +111,7 @@ const Table = ()=>{
                             <td className="px-4 py-2">{item.firstname}</td>
                             <td className="px-4 py-2">{item.lastname}</td>
                             <td className="px-4 py-2">{item.email}</td>
-                            <td className="px-4 py-2">{item.phone}</td>
-                            <td className="px-4 py-2">{item.town}</td>
-                            <td className="px-4 py-2">{item.location}</td>
+                            <td className="px-4 py-2">{item.job}</td>
                             <td className="px-4 py-2">{item.accountType}</td>
                             <td className="px-4 py-2">{item.amount+" XAF"}</td>
                             <td className="px-4 py-2"><div className="flex flex-row gap-2 ">

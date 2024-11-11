@@ -94,6 +94,11 @@ const Header = () => {
               Devenir membre
               </button>
             </Link>
+            <Link to="/login">
+              <button className="bg-blue-500 text-white py-2 px-4 rounded w-full ">
+                Login
+              </button>
+              </Link>
           </div>
 
           {/* Mobile Menu Button */}

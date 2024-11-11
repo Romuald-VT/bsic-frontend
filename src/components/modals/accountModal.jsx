@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
 import { useState } from "react"
 import { toast } from "react-toastify"
 import axios from "axios"
@@ -14,6 +13,7 @@ const AccountButton = ({showModal,email})=>{
         formData.append('accountType',accountType)
         try{
             const token = localStorage.getItem('token')
+            console.log(formData)
            const response = await axios.post(`https://bsic-api.up.railway.app/api/customers/acounttype/${email}`,formData,{headers:{"Content-type":"application/json",Authorization:token}})
            if(response.status!==200)
            {

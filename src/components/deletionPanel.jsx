@@ -13,7 +13,7 @@ const DeleteButton=({item})=>{
     return(
 
         <>
-           <buttom className="w-5 h-5 text-blue-600" onClick={()=>{setShowModal(true)}} id="deleteMsgBox"><IoTrash/></buttom>
+           <button className="w-5 h-5 text-blue-600" onClick={()=>{setShowModal(true)}} id="deleteMsgBox"><IoTrash/></button>
            <Tooltip anchorSelect="#deleteMsgBox" place="top">
             Supprimer ce compte
            </Tooltip>
