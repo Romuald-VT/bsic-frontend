@@ -13,8 +13,8 @@ const UserUidForm = ({showModal})=>{
     const handleChange = (e) =>{
          setUid(e.target.value)
     }
-    const handleSubmit = async(e)=>{
-          e.preventDefault()
+    const handleSubmit = async(event)=>{
+          event.preventDefault()
         try{
                 const response = await axios.get("https://bsic-api.up.railway.app/api/customers/info/code/"+uid)
                 if(response.status===200)
