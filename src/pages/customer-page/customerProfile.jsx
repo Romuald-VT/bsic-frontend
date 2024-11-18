@@ -21,12 +21,10 @@ const UserProfile = () => {
                     const customer = localStorage.getItem("customer")
                     let code = JSON.parse(customer).id
                     let token = JSON.parse(customer).user
-                    console.log(token)
                     const response = await axios.get(`https:/bsic-api.up.railway.app/api/customers/v1/info/code/${code}`,{headers:{Authorization:token}})
 
                     if(response.status === 200)
                     {
-                        console.log(response.data)
                         setUserData(response.data.data)
                     }
                     else{
