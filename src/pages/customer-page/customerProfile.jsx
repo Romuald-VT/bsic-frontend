@@ -6,7 +6,16 @@ import axios from 'axios';
 import {ToastContainer ,toast } from 'react-toastify';
 
 const UserProfile = () => {
-    const [userData, setUserData] = useState({});
+    const [userData, setUserData] = useState({
+      firstname:"",
+      lastname:"",
+      email:"",
+      phone:"",
+      job:"",
+      accountNumber:"",
+      accountType:"",
+      amount:""
+    });
     const dispatch=useDispatch()
     
     const handleLogout =()=>{
@@ -26,6 +35,7 @@ const UserProfile = () => {
                     if(response.status === 200)
                     {
                         setUserData(response.data.data)
+                        console.log(userData)
                     }
                     else{
                         toast.error("erreur de chargement des donnees !")
