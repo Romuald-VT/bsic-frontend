@@ -7,7 +7,7 @@ const DeleteDialogBox =({email,showModal})=>{
  
     const handleDeletion = async()=>
         {
-            const production_url = `https://bsic-api.up.railway.app/api/customers/${email}`
+            const production_url = `https://bsic-api.up.railway.app/api/customers/info/${email}`
             try{
                 const response = await axios.delete(production_url,{headers:{Authorization:localStorage.getItem('token')}})
     

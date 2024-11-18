@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
 import axios from "axios"
 import { useState } from "react"
 import { toast } from "react-toastify"
@@ -20,7 +19,7 @@ const AmountDialog = ({number,showModal,email})=>{
         const formData = new FormData()
         formData.append('amount',amount)
          try{
-            const response  = await axios.post(`https://bsic-api.up.railway.app/api/customers/${email}`,formData,{headers:{"Content-Type":'application/json',Authorization:token}})
+            const response  = await axios.post(`https://bsic-api.up.railway.app/api/customers/info/${email}`,formData,{headers:{"Content-Type":'application/json',Authorization:token}})
             if(response.status !== 200)
             {   
                 toast.error("un incident s'est produit !")
@@ -30,7 +29,6 @@ const AmountDialog = ({number,showModal,email})=>{
         }
         catch(err)
         {   
-            console.log(err)
             toast.error(err)
         }
         

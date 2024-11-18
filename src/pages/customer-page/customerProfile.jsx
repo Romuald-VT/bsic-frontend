@@ -11,7 +11,6 @@ const UserProfile = () => {
     
     const handleLogout =()=>{
         localStorage.removeItem("customer")
-        localStorage.removeItem("usertoken")
         localStorage.removeItem("")
         dispatch(logout())
     }
@@ -19,19 +18,22 @@ const UserProfile = () => {
       useEffect(() => {
             const getUserData = async()=>{
                 try {
-                    const email = localStorage.getItem("customerEmail")
-                    const token = localStorage.getItem('usertoken')
-                    const response = await axios.get(`https:/bsic-api.up.railway.app/api/customers/${email}`,{headers:{Authorization:token}})
+                    const customer = localStorage.getItem("customer")
+                    let code = JSON.parse(customer).id
+                    let token = JSON.parse(customer).user
+                    console.log(token)
+                    const response = await axios.get(`https:/bsic-api.up.railway.app/api/customers/v1/info/code/${code}`,{headers:{Authorization:token}})
 
                     if(response.status === 200)
                     {
-                        setUserData(response.data.customer[0])
+                        console.log(response.data)
+                        setUserData(response.data.data)
                     }
                     else{
                         toast.error("erreur de chargement des donnees !")
                     }
                 } catch (error) {
-                    toast.error(error)
+                    toast.error(error.message)
                 }
             }
             getUserData()

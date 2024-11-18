@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "./../../assets/logo.png";
+import UserInfoMod from "../userInfoModal";
 
 const navItems = [
   { name: "Accueil", path: "/" },
@@ -89,16 +90,7 @@ const Header = () => {
             ))}
 
             {/* Login & Signup Buttons */}
-            <Link to="/member-form">
-              <button className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300">
-              Devenir membre
-              </button>
-            </Link>
-            <Link to="/login">
-              <button className="bg-blue-500 text-white py-2 px-4 rounded w-full ">
-                Login
-              </button>
-              </Link>
+            <UserInfoMod/>
           </div>
 
           {/* Mobile Menu Button */}
@@ -134,11 +126,7 @@ const Header = () => {
                 )}
               </div>
             ))}
-            <Link to="/member-form">
-              <button className="bg-blue-500 text-white py-2 px-4 rounded w-full mt-2">
-              Devenir membre
-              </button>
-            </Link>
+            
           </div>
         )}
       </div>

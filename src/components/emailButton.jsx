@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react"
 import { createPortal } from "react-dom"
-import { FaMailBulk } from "react-icons/fa"
+import { FaPen } from "react-icons/fa"
 import EmailModal from "./modals/emailModal"
 import { Tooltip } from "react-tooltip"
 
@@ -11,7 +11,7 @@ const EmailButton = ({userData})=>{
     return(
         <>
            <button className="w-5 h-5 text-blue-600" 
-           onClick={()=>{setShowModal(true)}} id="email"><FaMailBulk/></button>
+           onClick={()=>{setShowModal(true)}} id="email"><FaPen/></button>
            <Tooltip anchorSelect="#email" place="top">
             Notifier le Client
            </Tooltip>
