@@ -35,7 +35,7 @@ const UserProfile = () => {
                 }
             }
             getUserData()
-      }, [userData]);
+      }, []);
     
       return (
         <div className="max-w-[800px] mx-auto bg-white rounded-[15px] shadow-lg p-[30px]">
