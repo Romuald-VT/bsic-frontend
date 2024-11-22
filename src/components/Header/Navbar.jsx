@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "./../../assets/logo.png";
+import logo from "./../../assets/logo1.png";
 import UserInfoMod from "../userInfoModal";
 
 const navItems = [
@@ -29,13 +29,13 @@ const Header = () => {
   const toggleProductsDropdown = () => setProductsDropdownOpen(!productsDropdownOpen); // Gestion du dropdown Products
 
   return (
-    <nav className="bg-white shadow-lg">
+    <nav className="bg-gray-500 shadow-lg">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
-              <img alt="BscBank logo" src={logo} className="h-10 w-auto mr-3" />
+              <img alt="BscBank logo" src={logo} className="h-20 w-auto mr-3" />
             </Link>
           </div>
 

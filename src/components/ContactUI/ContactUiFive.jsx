@@ -5,18 +5,18 @@ import { faFacebookF, faTwitter, faLinkedinIn, faInstagram } from '@fortawesome/
 // Structure des données pour les agences
 const branches = [
   {
-    name: 'Branche principale',
-    address: '123 Financial Street',
-    city: 'New York, NY 10001',
+    name: 'Siege General',
+    address: 'Plateau Avenue Nogues BP 10323',
+    city: 'Abidjan 01 Abidjan Cote-D\'ivoire',
     hours: [
       { day: 'Lundi - Vendredi', time: '9h - 17h' },
       { day: 'Samedi', time: '10h - 14h' },
     ],
   },
   {
-    name: 'Succursale du centre-ville',
-    address: '456 Commerce Avenue',
-    city: 'New York, NY 10002',
+    name: 'Agence Cameroun',
+    address: '3M3W+2WW  Tel:+237694021302',
+    city: 'Rue , Douala ',
     hours: [
       { day: 'Lundi - Vendredi', time: '9h - 18h' },
       { day: 'Samedi', time: '10h - 15h' },
