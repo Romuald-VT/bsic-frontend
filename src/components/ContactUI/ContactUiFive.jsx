@@ -6,7 +6,9 @@ import { faFacebookF, faTwitter, faLinkedinIn, faInstagram } from '@fortawesome/
 const branches = [
   {
     name: 'Siege General',
-    address: 'Plateau Avenue Nogues BP 10323',
+    address: 'Plateau Avenue Nogues BP 10323 ',
+    Tel:"+2250170076076",
+    mail:"support@bsc-bank.com",
     city: 'Abidjan 01 Abidjan Cote-D\'ivoire',
     hours: [
       { day: 'Lundi - Vendredi', time: '9h - 17h' },
@@ -15,7 +17,8 @@ const branches = [
   },
   {
     name: 'Agence Cameroun',
-    address: '3M3W+2WW  Tel:+237694021302',
+    address: '3M3W+2WW  ',
+    Tel:"+237694021302",
     city: 'Rue , Douala ',
     hours: [
       { day: 'Lundi - Vendredi', time: '9h - 18h' },
@@ -53,6 +56,8 @@ const BranchesAndSocial = () => {
               <h3 className="text-xl font-semibold mb-2">{branch.name}</h3>
               <p className="mb-2">{branch.address}</p>
               <p className="mb-2">{branch.city}</p>
+              <p className="mb-2">{branch.Tel}</p>
+              <p className="mb-2">{branch.mail}</p>
               {branch.hours.map((hour, idx) => (
                 <p key={idx} className="mb-2">
                   {hour.day}: {hour.time}
