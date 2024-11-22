@@ -25,15 +25,6 @@ const branches = [
       { day: 'Samedi', time: '10h - 15h' },
     ],
   },
-  {
-    name: "Succursale d'Uptown",
-    address: '789 Wealth Lane',
-    city: 'New York, NY 10003',
-    hours: [
-      { day: 'Lundi - Vendredi', time: '8h:30 - 17h:30' },
-      { day: 'Samedi', time: '9h - 13h' },
-    ],
-  },
 ];
 
 // Structure des données pour les réseaux sociaux
