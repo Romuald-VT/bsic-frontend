@@ -42,7 +42,7 @@ const ClientForm =({setModal})=>{
         try {
             const token = localStorage.getItem('token')
             console.log(formDataToSend)
-            const response = await axios.post('https://bsic-api.production.up.railway.app/api/customers/accounts/add',formDataToSend,{headers:{"Content-Type":"application/json",Authorization:token}})
+            const response = await axios.post('https://bsic-api-production.up.railway.app/api/customers/accounts/add',formDataToSend,{headers:{"Content-Type":"application/json",Authorization:token}})
             if(response.status!==201)
             {
               toast.error(response.data.message)

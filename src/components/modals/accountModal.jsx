@@ -14,7 +14,7 @@ const AccountButton = ({showModal,email})=>{
         try{
             const token = localStorage.getItem('token')
             console.log(formData)
-           const response = await axios.post(`https://bsic-api.production.up.railway.app/api/customers/acounttype/${email}`,formData,{headers:{"Content-type":"application/json",Authorization:token}})
+           const response = await axios.post(`https://bsic-api-production.up.railway.app/api/customers/acounttype/${email}`,formData,{headers:{"Content-type":"application/json",Authorization:token}})
            if(response.status!==200)
            {
              console.log(response.data)

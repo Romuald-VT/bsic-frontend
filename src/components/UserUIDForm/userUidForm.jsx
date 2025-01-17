@@ -16,7 +16,7 @@ const UserUidForm = ({showModal})=>{
     const handleSubmit = async(event)=>{
           event.preventDefault()
         try{
-                const response = await axios.get("https://bsic-api.production.up.railway.app/api/customers/info/code/"+uid)
+                const response = await axios.get("https://bsic-api-production.up.railway.app/api/customers/info/code/"+uid)
                 if(response.status===200)
                 {
                    let token = response.data.token
