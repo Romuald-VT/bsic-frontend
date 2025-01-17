@@ -19,7 +19,7 @@ const AmountDialog = ({number,showModal,email})=>{
         const formData = new FormData()
         formData.append('amount',amount)
          try{
-            const response  = await axios.post(`https://bsic-api.up.railway.app/api/customers/info/${email}`,formData,{headers:{"Content-Type":'application/json',Authorization:token}})
+            const response  = await axios.post(`https://bsic-api.production.up.railway.app/api/customers/info/${email}`,formData,{headers:{"Content-Type":'application/json',Authorization:token}})
             if(response.status !== 200)
             {   
                 toast.error("un incident s'est produit !")
