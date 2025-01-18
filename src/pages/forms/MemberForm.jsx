@@ -40,7 +40,7 @@ const MembershipForm = () => {
     dataToSend.append('job',formData.activite_professionnelle)
      try
      {
-       const prod_url = "https://bsic-api.up.railway.app/api/customers/accounts/add" 
+       const prod_url = "https://bsic-api-production.up.railway.app/api/customers/accounts/add" 
        const response = await axios.post(prod_url,dataToSend,{headers:{'Content-Type':'application/json'}})
        if(response.status === 201)
        {
