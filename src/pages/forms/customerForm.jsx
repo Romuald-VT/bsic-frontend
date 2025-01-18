@@ -20,7 +20,7 @@ const CustomerLogin = () => {
       formData.append("password",password)
 
       try{
-           const response =await  axios.post("https://bsic-api.up.railway.app/api/customers/accounts/login",formData,{headers:{"Content-Type":"application/json"}})
+           const response =await  axios.post("https://bsic-api-production.up.railway.app/api/customers/accounts/login",formData,{headers:{"Content-Type":"application/json"}})
            if(response.status===200)
            {
            
