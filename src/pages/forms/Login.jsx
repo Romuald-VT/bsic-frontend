@@ -32,7 +32,7 @@ import 'react-toastify/ReactToastify.css'
     
     try
     {
-      const pro_url = "https://bsic-api.up.railway.app/api/users/login"
+      const pro_url = "https://bsic-api-production.up.railway.app/api/users/login"
       const response = await axios.post(pro_url,dataToSend,{headers:{'Content-Type':'application/json'}})
       if( response.status ===200)
       {
