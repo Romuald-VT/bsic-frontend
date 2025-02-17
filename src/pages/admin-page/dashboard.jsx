@@ -29,7 +29,7 @@ const Table = ()=>{
 
     useEffect(()=>{
          const getData = async()=>{
-            const prodd_url = `https://bsic-api-production.up.railway.app/api/customers/info/all`
+            const prodd_url = `https://bsic-api-production-6fde.up.railway.app/api/customers/info/all`
             try{
                 const token = localStorage.getItem('token')
                 const response = await axios.get(prodd_url,{headers:{'Authorization':token}})
