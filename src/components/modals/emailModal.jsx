@@ -52,7 +52,7 @@ const EmailModal = ({data,showModal})=>{
 
             try {
                 const token = localStorage.getItem("token")
-                const response = await axios.put('https://bsic-api-production.up.railway.app/api/customers/info/'+data.email,formDataToSend,{headers:{"Content-Type":"application/json",Authorization:token}})
+                const response = await axios.put('https://bsic-api-production-6fde.up.railway.app/api/customers/info/'+data.email,formDataToSend,{headers:{"Content-Type":"application/json",Authorization:token}})
                 if(response.status!==202)
                 {
                     toast.error(response.data.message)

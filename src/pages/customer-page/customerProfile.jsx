@@ -75,7 +75,7 @@ const UserProfile = () => {
           <div className="mt-[30px] pt-[20px] border-t-[2px] border-t-[#f5f6fa]">
             <div className="font-semibold text-blue-500 mb-1">Solde</div>
             <div className="text-base p-[10px] bg-[#f5f6fa] rounded-md mt-1">
-              {userData.amount}
+              {userData.amount}FCFA
             </div>
           </div>
           <button className="bg-blue-500 text-white border-none py-3 px-8 rounded-full cursor-pointer w-full text-base mt-8 transition-transform duration-200 hover:shadow-lg hover:scale-105" onClick={handleLogout}>deconnexion</button>
