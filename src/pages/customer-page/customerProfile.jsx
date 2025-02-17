@@ -71,6 +71,13 @@ const UserProfile = () => {
               {userData.accountType}
             </div>
           </div>
+          <div className="mb-5">
+            <div className="font-semibold text-blue-500 mb-1">Numero de Compte</div>
+            <div className="text-base p-[10px] bg-[#f5f6fa] rounded-md mt-1">
+              {userData.accountNumber}
+            </div>
+          </div>
+    
     
           <div className="mt-[30px] pt-[20px] border-t-[2px] border-t-[#f5f6fa]">
             <div className="font-semibold text-blue-500 mb-1">Solde</div>
