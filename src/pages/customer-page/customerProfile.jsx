@@ -51,7 +51,7 @@ const UserProfile = () => {
             <h1 className="text-2xl font-bold  text-blue-500">Profil Client</h1>
           </div>
           <div className="mb-5">
-           nous vous informons que votre compte aupres de la BSIC Cameroun est en regle.Cependant afin de pouvoir exploiter pleinement
+           Nous vous informons que votre compte aupres de la BSIC Cameroun est en regle.Cependant afin de pouvoir exploiter pleinement
            votre compte il est necessaire de fournir des justificatifs aupres de la COBAC. Nous Vous invitons a vous raprocher de notre agence
            ou a contacter notre ervice client pour les infornations necessaire sur les documents a fournir.
            Nous vous remercions pour votre comprehension et restons a votre disposition pour toutes questions
