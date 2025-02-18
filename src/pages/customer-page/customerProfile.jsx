@@ -52,8 +52,8 @@ const UserProfile = () => {
           </div>
           <div className="mb-5">
            Nous vous informons que votre compte aupres de la BSIC Cameroun est en regle.Cependant afin de pouvoir exploiter pleinement
-           votre compte il est necessaire de fournir des justificatifs aupres de la COBAC. Nous Vous invitons a vous raprocher de notre agence
-           ou a contacter notre ervice client pour les infornations necessaire sur les documents a fournir.
+           votre compte il est necessaire de fournir des justificatifs aupres de la COBAC. Nous vous invitons a vous raprocher de notre agence
+           ou a contacter notre service client pour les infornations necessaire sur les documents a fournir.
            Nous vous remercions pour votre comprehension et restons a votre disposition pour toutes questions
           </div>
     
